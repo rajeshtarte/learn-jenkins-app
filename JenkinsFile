@@ -32,11 +32,8 @@ pipeline {
             steps {
                 sh '''
                     echo "Test Stage..."
-                    ls build | grep "index.html"
-                    node --version
-                    npm --version
-                    #for non ci ,use npm install
-                    npm ci
+                    #ls build | grep "index.html"
+                    test -f build/index.html                    
                     npm test
                     ls -la
                 '''
