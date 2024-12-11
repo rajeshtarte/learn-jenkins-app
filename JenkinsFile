@@ -1,0 +1,12 @@
+//This file is used within project root dir 
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
