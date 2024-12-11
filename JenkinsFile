@@ -38,6 +38,27 @@ pipeline {
                     ls -la
                 '''
             }
+        } 
+        stage('E2E') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/playwright:v1.49.1-noble'
+                    reuseNode true
+                    //Run as root , do not use this
+                    //args '-u root:root'
+                }
+            }
+            steps {
+                sh '''
+                    #npm install -g serve
+                    #serve -s build
+
+                    #instead root install it locally 
+                    npm install  serve
+                    node_modules/.bin/serve -s build
+                    npx playwright test
+                '''
+            }
         }        
     }
 
