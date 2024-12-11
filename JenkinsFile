@@ -55,7 +55,15 @@ pipeline {
 
                     #instead root install it locally 
                     npm install  serve
-                    node_modules/.bin/serve -s build
+                    #It will run server continously 
+                    #node_modules/.bin/serve -s build
+
+                    #Starting server in background 
+                    node_modules/.bin/serve -s build &
+
+                    #wait for few[10] seconds so that server will be ready
+                    sleep 10
+
                     npx playwright test
                 '''
             }
