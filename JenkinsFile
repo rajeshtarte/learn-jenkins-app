@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:23-alpine'
+                    image 'node:18-alpine'
                     reuseNode true
                 }
             }
@@ -20,12 +20,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    #for non ci ,use npm install   
-                    # ci -> clean install  
-                    #ls /home/node/.npm/_logs
-                    #rm -rf node_modules
-                    #cat  /home/node/.npm/_logs/2024-12-17T12_23_19_897Z-debug-0.log
-                    #ls -la
+                    #for non ci ,use npm install
                     npm ci
                     npm run build
                     ls -la
