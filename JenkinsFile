@@ -97,7 +97,7 @@ pipeline {
                    node_modules/.bin/netlify deploy --dir=build --json > deploy-output.json
                    #Its [CI_ENVIRONMENT_URL,MY_VAR] accessible in only this block
                    MY_VAR=$(date)
-                   echo $MY_VAR' 
+                   echo $MY_VAR 
                    CI_ENVIRONMENT_URL=$(node_modules/.bin/node-jq -r '.deploy_url' deploy-output.json)                   
                    npx playwright test --reporter=html
                 '''
