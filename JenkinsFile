@@ -25,6 +25,7 @@ pipeline {
                     #ls /home/node/.npm/_logs
                     rm -rf node_modules
                     #cat  /home/node/.npm/_logs/2024-12-17T12_23_19_897Z-debug-0.log
+                    ls -la
                     npm ci
                     npm run build
                     ls -la
