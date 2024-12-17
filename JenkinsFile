@@ -20,8 +20,8 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    #for non ci ,use npm install
-                    npm ci
+                    #for non ci ,use npm install                    
+                    #npm ci
                     npm run build
                     ls -la
                 '''
