@@ -21,7 +21,7 @@ pipeline {
                     node --version
                     npm --version
                     #for non ci ,use npm install                    
-                    #npm ci
+                    npm ci
                     npm run build
                     ls -la
                 '''
